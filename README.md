@@ -88,7 +88,7 @@ Answer the following questions about `curl`:
 
 14. Which request method might an attacker use to figure out which HTTP requests an HTTP server will accept?
 
-
+> The attacker could use get or options
 
 #### Sessions and Cookies
 
@@ -104,6 +104,8 @@ Answer the following questions about sessions and cookies:
     Set-Cookie: cart=Bob
     ```
 
+ >   `set-cookie` will send cookies
+
 16. Which request header will continue the client's session?
 
     ```HTTP
@@ -111,6 +113,7 @@ Answer the following questions about sessions and cookies:
     Host: www.example.org
     Cookie: cart=Bob
     ```
+> `cookie` will maintain a session
 
 #### Example HTTP Requests and Responses
 
@@ -133,11 +136,19 @@ username=Barbara&password=password
 
 17. What is the request method?
 
+>Post
+
 18. Which header expresses the client's preference for an encrypted response?
+
+> Upgrade-Insecure-Requests: 1
 
 19. Does the request have a user session associated with it?
 
+> No, as I do not see any cookie
+
 20. What kind of data is being sent from this request body?
+
+> Login information with username and password
 
 **HTTP Response**
 
@@ -160,13 +171,23 @@ X-XSS-Protection: 1; mode=block
 
 21. What is the response status code?
 
+> 200
+
 22. What web server is handling this HTTP response?
+
+> Apache
 
 23. Does this response have a user session associated to it?
 
+> Yes there is a setcookie:SessionID=5
+
 24. What kind of content is likely to be in the [page content] response body?
 
+> HTML code and text
+
 25. If your class covered security headers, what security request headers have been included?
+
+> X-XSS protection
 
 #### Monoliths and Microservices
 
@@ -174,9 +195,15 @@ Answer the following questions about monoliths and microservices:
 
 26. What are the individual components of microservices called?
 
+> Services
+
 27. What is a service that writes to a database and communicates to other services?
 
+> Application Programing Interface (API)
+
 28. What type of underlying technology allows for microservices to become scalable and have redundancy?
+
+> Containers
 
 #### Deploying and Testing a Container Set
 
@@ -184,16 +211,25 @@ Answer the following questions about multi-container deployment:
 
 29. What tool can be used to deploy multiple containers at once?
 
+> Docker
+
 30. What kind of file format is required for us to deploy a container set?
+
+> YAML YAML aient programming language
 
 #### Databases
 
 31. Which type of SQL query would we use to see all of the information within a table called `customers`?
 
+> Select query and will specify the table as customers
+
 32. Which type of SQL query would we use to enter new data into a table? (You don't need a full query, just the first part of the statement.)
+
+> Insert query by specifying the name to the variable where new data is added
 
 33. Why would we never run `DELETE FROM <table-name>;` by itself?
 
+> It will delete all tables, insert can always replace individual data poits
 ---
 
 ### Bonus Challenge Overview: The Cookie Jar
