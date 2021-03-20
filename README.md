@@ -7,6 +7,20 @@ In this homework, we will review the many of the concepts and tools covered in t
 * [HTTP Reference Sheet](./HTTP_Reference.md)
 * [curl Reference Sheet](./cURL_Reference.md)
 
+<!-- prettier-ignore -->
+| HTTP Method | Description                                                                                                                           |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| GET         | The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.                     |
+| HEAD        | The HEAD method asks for a response identical to that of a GET request, but without the response body.                                |
+| POST        | The POST method is used to submit an entity to the specified resource, often causing a change in state or side effects on the server. |
+| PUT         | The PUT method replaces all current representations of the target resource with the request payload.                                  |
+| DELETE      | The DELETE method deletes the specified resource.                                                                                     |
+| CONNECT     | The CONNECT method establishes a tunnel to the server identified by the target resource.                                              |
+| OPTIONS     | The OPTIONS method is used to describe the communication options for the target resource.                                             |
+| TRACE       | The TRACE method performs a message loop-back test along the path to the target resource.                                             |
+| PATCH       | The PATCH method is used to apply partial modifications to a resource.                                                                |
+
+
 ---
 
 ### Questions 
@@ -19,35 +33,62 @@ Answer the following questions about the HTTP request and response process.
 
 1. What type of architecture does the HTTP request and response process occur in?
 
+> Client server architecture wher the requests are made from the client to the server and then response back to the client
+
 2. What are the different parts of an HTTP request? 
+
+> Request line header and the body
 
 3. Which part of an HTTP request is optional?
 
+> Request Body
+
 4. What are the three parts of an HTTP response?
+
+> Status line, response headers and body
 
 5. Which number class of status codes represents errors?
 
+> 400 and 500
+
 6. What are the two most common request methods that a security professional will encounter?
+
+> The get and post requests
 
 7. Which type of HTTP request method is used for sending data?
 
+> The post request
+
 8. Which part of an HTTP request contains the data being sent to the server?
+
+> req.body or request body which takes the data from HTML forms packages it and sends to the server
 
 9. In which part of an HTTP response does the browser receive the web code to generate and style a web page?
 
 #### Using curl
 
-Answer the following questions about `curl`:
+Answer the following questions about `curl`: 
 
 10. What are the advantages of using `curl` over the browser?
 
+> It is very flexible and you can complete a variety of tasks including user authentication, HTTP post, SSL connections, proxy support, FTP uploads. It can be repeated, automated and modified which provides flexiility
+
+
 11. Which `curl` option is used to change the request method?
+
+> CHANGE REQUEST: `curl -x`
 
 12. Which `curl` option is used to set request headers?
 
+> SET REQUEST HEADER: `curl -h`
+
 13. Which `curl` option is used to view the response header?
 
+> VIEW RESPONSE HEADER: `curl -i`
+
 14. Which request method might an attacker use to figure out which HTTP requests an HTTP server will accept?
+
+
 
 #### Sessions and Cookies
 
